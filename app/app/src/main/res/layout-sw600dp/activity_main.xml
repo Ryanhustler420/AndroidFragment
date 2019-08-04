@@ -5,16 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <!-- any device which has width of 600 are going to use this activity -->
-    <!-- A table would be perfect example for this case -->
-
-    <TextView
-        android:id="@+id/myText"
-        android:textSize="48sp"
-        android:text="LargeScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.androidfragment.CourseListFragment"
+        android:layout_width="match_parent"
+        tools:layout="@layout/course_list_fragment"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
