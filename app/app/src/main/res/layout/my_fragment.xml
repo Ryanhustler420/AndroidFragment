@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="Hello From Fragment"
+    <!--ListView Adaptor has predefine! don't assign your own id here-->
+    <ListView
+        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    
+        android:layout_height="wrap_content">
 
+    </ListView>
 </FrameLayout>

@@ -3,15 +3,29 @@ package com.example.androidfragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainFragment extends Fragment{
+import com.example.androidfragment.data.Course;
+import com.example.androidfragment.data.CourseArrayAdaptor;
+import com.example.androidfragment.data.CourseData;
+
+import java.util.List;
+
+public class MainFragment extends ListFragment{
+    List<Course> courses = new CourseData().courseList();
     // we need constructor because when user change orientation of device
     // where this helps else application could crash.
     public MainFragment() { }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CourseArrayAdaptor adaptor = new CourseArrayAdaptor(getActivity(), R.layout.course_list_item, courses);
+        setListAdapter(adaptor);
+    }
 
     @Nullable
     @Override
