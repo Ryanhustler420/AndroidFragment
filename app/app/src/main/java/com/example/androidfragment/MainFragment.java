@@ -7,10 +7,12 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.androidfragment.data.Course;
 import com.example.androidfragment.data.CourseArrayAdaptor;
 import com.example.androidfragment.data.CourseData;
+import com.example.androidfragment.util.ScreenUtility;
 
 import java.util.List;
 
@@ -22,6 +24,10 @@ public class MainFragment extends ListFragment{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        ScreenUtility screenUtility = new ScreenUtility(getActivity());
+
+        Toast.makeText(getContext(), String.valueOf(screenUtility.getDpWidth()), Toast.LENGTH_LONG).show();
+
         super.onCreate(savedInstanceState);
         CourseArrayAdaptor adaptor = new CourseArrayAdaptor(getActivity(), R.layout.course_list_item, courses);
         setListAdapter(adaptor);
