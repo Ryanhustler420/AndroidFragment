@@ -22,7 +22,7 @@ public class MainFragment extends Fragment{
         * @params savedInstanceState will give us all the state of our activity or fragment.
         * */
 
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.my_fragment, container, false);
         return view;
 
         // return super.onCreateView(inflater, container, savedInstanceState);
