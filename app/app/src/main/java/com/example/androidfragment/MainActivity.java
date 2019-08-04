@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = fragmentManager.findFragmentById(R.id.my_container);
 
         if(fragment == null) {
-            // this new MainFragment() is our created Class. see class for more detail. it has the override method
-            fragment = new MainFragment();
+            // this new CourseListFragment() is our created Class. see class for more detail. it has the override method
+            fragment = new CourseListFragment();
             fragmentManager.beginTransaction().add(R.id.my_container, fragment)
             .commit();
         }

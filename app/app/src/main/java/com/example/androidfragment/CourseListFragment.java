@@ -16,11 +16,11 @@ import com.example.androidfragment.util.ScreenUtility;
 
 import java.util.List;
 
-public class MainFragment extends ListFragment{
+public class CourseListFragment extends ListFragment{
     List<Course> courses = new CourseData().courseList();
     // we need constructor because when user change orientation of device
     // where this helps else application could crash.
-    public MainFragment() { }
+    public CourseListFragment() { }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainFragment extends ListFragment{
         * @params savedInstanceState will give us all the state of our activity or fragment.
         * */
 
-        View view = inflater.inflate(R.layout.my_fragment, container, false);
+        View view = inflater.inflate(R.layout.course_list_fragment, container, false);
         return view;
 
         // return super.onCreateView(inflater, container, savedInstanceState);
