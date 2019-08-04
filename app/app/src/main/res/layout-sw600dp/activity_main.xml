@@ -8,11 +8,19 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
+    <!-- layout_weight="1" will take the screen width 50% -->
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.androidfragment.CourseListFragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         tools:layout="@layout/course_list_fragment"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/detailContainer"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent" />
 
 </RelativeLayout>
