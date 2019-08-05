@@ -1,5 +1,6 @@
 package com.example.androidfragment;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -15,7 +16,11 @@ public class MainActivity extends AppCompatActivity implements CourseListFragmen
     }
 
     @Override
-    public void onItemSelected(Course course) {
+    public void onItemSelected(Course course, int position) {
         Toast.makeText(getApplicationContext(), course.getCourseName(), Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(MainActivity.this, CourseDetailActivity.class);
+        intent.putExtra("course_id", position);
+        startActivity(intent);
     }
 }

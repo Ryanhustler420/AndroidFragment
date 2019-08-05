@@ -1,7 +1,6 @@
 package com.example.androidfragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -54,7 +53,7 @@ public class CourseListFragment extends ListFragment{
 
     // we created this
     public interface  Callbacks {
-        void onItemSelected(Course course);
+        void onItemSelected(Course course, int position);
     }
 
     // we have to override this method
@@ -69,7 +68,7 @@ public class CourseListFragment extends ListFragment{
         // startActivity(new Intent(this, CourseDetailActivity.class));
 
         // we are passing to this interface function.
-        this.activity.onItemSelected(course);
+        this.activity.onItemSelected(course, position);
         // we have to implement fragment life cycle hooks
 
         // Toast.makeText(getActivity(), "Name: " + course.getCourseName(), Toast.LENGTH_LONG).show();
