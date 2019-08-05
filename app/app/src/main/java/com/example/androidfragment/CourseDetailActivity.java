@@ -3,9 +3,11 @@ package com.example.androidfragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+import com.example.androidfragment.data.Course;
+import com.example.androidfragment.data.CourseData;
 
 public class CourseDetailActivity extends AppCompatActivity {
+    Course course;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +19,10 @@ public class CourseDetailActivity extends AppCompatActivity {
             Bundle extra = getIntent().getExtras();
             int position = extra.getInt("course_id");
 
-            Toast.makeText(getApplicationContext(), "position: " + position, Toast.LENGTH_LONG).show();
+            course = new CourseData().courseList().get(position);
 
             CourseDetailFragment fragment = new CourseDetailFragment();
+            fragment.setArguments(extra);
             FragmentManager fragmentManager = getSupportFragmentManager();
 
             fragmentManager

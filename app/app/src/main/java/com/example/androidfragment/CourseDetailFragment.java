@@ -11,12 +11,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.androidfragment.data.Course;
+import com.example.androidfragment.data.CourseData;
 
 public class CourseDetailFragment extends Fragment {
     Course course;
 
     // Require no-args constructor
     public CourseDetailFragment() {}
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle bundle = getArguments();
+        if(bundle != null && bundle.containsKey("course_id")) {
+            int position = bundle.getInt("course_id");
+            course = new CourseData().courseList().get(position);
+        }
+    }
 
     @Nullable
     @Override
